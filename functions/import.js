@@ -20,10 +20,12 @@ module.exports.handler = async function(event, context) {
       'Content-Type':"application/javascript",
       'Access-Control-Allow-Origin':'https://cdpn.io',
     },
-    body:`window.self = window.self || {};
+    body:`const oldSelf = window.self;
+    window.self = {};
 import '${pen}';
 const component = self.CodePenVueComponent
 delete window.self;
+window.self = oldSelf;
 export default component;`,
   };
 }
