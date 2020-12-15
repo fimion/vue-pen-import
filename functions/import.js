@@ -12,7 +12,6 @@
  */
 module.exports.handler = async function(event, context) {
   const script = event.path.slice('/import/'.length,event.path.length);
-  console.log(event.path, script);
   const pen = `https://codepen.io/${script}.js`;
   // your server-side functionality
   return {
