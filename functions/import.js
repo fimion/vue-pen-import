@@ -1,6 +1,7 @@
 /**
  * @typedef {object} LambdaEvent
  * @property {object} queryStringParameters
+ * @property {string} path
  */
 
 /**
@@ -10,8 +11,8 @@
  * @returns {Promise<{headers: {contentType: string}, body: string, statusCode: number}>}
  */
 module.exports.handler = async function(event, context) {
-  const script = event.queryStringParameters.script;
-  console.log(event);
+  const script = event.path.slice('/import/'.length,event.path.length);
+  console.log(event.path, script);
   const pen = `https://codepen.io/${script}.js`;
   // your server-side functionality
   return {
@@ -20,6 +21,7 @@ module.exports.handler = async function(event, context) {
     body:`window.self = window.self || {};
 import '${pen}';
 const component = self.CodePenVueComponent
+delete window.self;
 export default component;`,
   };
 }
