@@ -11,7 +11,7 @@
  */
 module.exports.handler = async function(event, context) {
   const script = event.queryStringParameters.script;
-  console.log(event.queryStringParameters);
+  console.log(event);
   const pen = `https://codepen.io/${script}.js`;
   // your server-side functionality
   return {
