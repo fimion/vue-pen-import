@@ -1,9 +1,9 @@
 [[redirects]]
     from = "/import/*"
-    to="/.netlify/function/import?script=:splat"
+    to="/.netlify/functions/import?script=:splat"
     status = 200
     force = true
 
 [build]
     publish = "public/"
-    functions="function/"
+    functions="functions/"
