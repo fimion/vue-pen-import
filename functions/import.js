@@ -19,7 +19,7 @@ module.exports.handler = async function(event, context) {
     statusCode: 200,
     headers:{
       'Content-Type':"application/javascript",
-      'Access-Control-Allow-Origin':'*.cdpn.io',
+      'Access-Control-Allow-Origin':'https://cdpn.io',
     },
     body:`window.self = window.self || {};
 import '${pen}';
