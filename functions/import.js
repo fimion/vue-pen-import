@@ -17,7 +17,10 @@ module.exports.handler = async function(event, context) {
   // your server-side functionality
   return {
     statusCode: 200,
-    headers:{contentType:"application/javascript", accessControlAllowOrigin:'*.cdpn.io'},
+    headers:{
+      'Content-Type':"application/javascript",
+      'Access-Control-Allow-Origin':'*.cdpn.io',
+    },
     body:`window.self = window.self || {};
 import '${pen}';
 const component = self.CodePenVueComponent
