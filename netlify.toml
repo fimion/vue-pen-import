@@ -1,6 +1,6 @@
 [[redirects]]
     from = "/import/*"
-    to="/.netlify/function/import-background?script=:splat"
+    to="/.netlify/function/import?script=:splat"
     status = 200
     force = true
 
