@@ -10,7 +10,8 @@
  * @returns {Promise<{headers: {contentType: string}, body: string, statusCode: number}>}
  */
 module.exports.handler = async function(event, context) {
-  const script = event.queryStringParameters.script
+  const script = event.queryStringParameters.script;
+  console.log(event.queryStringParameters);
   const pen = `https://codepen.io/${script}.js`;
   // your server-side functionality
   return {
